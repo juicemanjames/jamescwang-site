@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Sidebar from '../../components/Sidebar.astro';
+---
+<BaseLayout title="Videos">
+  <div class="container">
+    <div class="row">
+      <Sidebar />
+      <div class="content">
+        <div class="video-grid">
+          <!-- Row 1 -->
+          <div class="video-row">
+            <div class="video-cell">
+              <a href="/posts/vote" class="btn video-label">Making Young Voters</a>
+              <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/HCgLv3MLQnw" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div class="video-cell">
+              <a href="#" class="btn video-label">When Pornhub Meets Data Science</a>
+              <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/PZ8xDPjjtJY?rel=0&controls=1&autoplay=0&mute=0&start=1" allow="autoplay; encrypted-media" allowfullscreen title="When Pornhub Meets Data Science"></iframe>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="video-row">
+            <div class="video-cell">
+              <a href="/tableauplayground" class="btn video-label">Build a Radar Chart in Tableau</a>
+              <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/rRsteR6zuhc" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div class="video-cell">
+              <a href="#" class="btn video-label">How to Predict Personalities?</a>
+              <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/AkCe0a6vSMY?start=156" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="video-row">
+            <div class="video-cell">
+              <a href="https://researchblog.duke.edu/2017/08/10/pinpointing-where-durhams-nicotine-addicts-get-their-fix/" target="_blank" class="btn video-label">Locating NC Tobacco Retailers</a>
+              <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/PxArCjUR2Q4" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div class="video-cell">
+              <a href="#" class="btn video-label">What's the Best City for Jobs?</a>
+              <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/FyXB8TXiAlE" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .video-grid { margin-top: 10px; }
+    .video-row { display: flex; gap: 20px; margin-bottom: 20px; }
+    .video-cell { flex: 1; }
+    .video-label { display: block; margin-bottom: 10px; font-size: 13px; text-align: center; }
+    @media (max-width: 767px) {
+      .video-row { flex-direction: column; }
+    }
+  </style>
+</BaseLayout>

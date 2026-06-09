@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('career');
+  return posts.map(post => ({ params: { id: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+<BaseLayout title={`${post.data.title} | Career`} description={post.data.summary}>
+  <div class="container">
+    <h1>{post.data.title}</h1>
+    <div>
+      <span class="post-info">{post.data.category}</span>
+      <span class="post-info">|</span>
+      <span class="post-info">{post.data.date}</span>
+    </div>
+    <div class="post-page">
+      <Content />
+    </div>
+    <a href="/career-advice" class="btn back-link">&larr; All Career Posts</a>
+  </div>
+</BaseLayout>

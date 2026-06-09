@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import PostCard from '../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts');
+const sorted = posts.sort((a, b) => {
+  if (a.data.featured && !b.data.featured) return -1;
+  if (!a.data.featured && b.data.featured) return 1;
+  if (a.data.featured && b.data.featured) return (a.data.order ?? 99) - (b.data.order ?? 99);
+  return 0;
+});
+---
+<BaseLayout title="James Wang">
+  <div class="container">
+    <h1>Data Science Projects</h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <Sidebar />
+      <div class="content">
+        {sorted.map(post => (
+          <PostCard
+            title={post.data.title}
+            slug={post.id}
+            thumbnail={post.data.thumbnail}
+            category={post.data.category}
+            tags={post.data.tags}
+            date={post.data.date}
+            summary={post.data.summary}
+          />
+        ))}
+        <a href="/career-advice">
+          <img src="/assets/images/5ec214ea5013c55f509cdda7_company_logo.png" alt="Career" class="company-banner" />
+        </a>
+        <a href="/career-advice" class="btn">Career Reflections &rarr;</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

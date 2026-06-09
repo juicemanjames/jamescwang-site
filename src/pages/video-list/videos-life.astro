@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Sidebar from '../../components/Sidebar.astro';
+---
+<BaseLayout title="Videos Life">
+  <div class="container">
+    <div class="row">
+      <Sidebar />
+      <div class="content">
+        <div class="video-grid">
+          <!-- Row 1 -->
+          <div class="video-row">
+            <div class="video-cell">
+              <a href="#" class="btn video-label">Advice for Duke Students</a>
+              <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/_Ul6NJ4_niA" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div class="video-cell">
+              <a href="#" class="btn video-label">Drone: Flying over Guilin, China</a>
+              <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/8337h_7z_XQ?rel=0&controls=1&autoplay=0&mute=0&start=1" allow="autoplay; encrypted-media" allowfullscreen title="Stunning Drone-Shot Scene of Guilin, China"></iframe>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="video-row">
+            <div class="video-cell">
+              <a href="#" class="btn video-label">Interviewing Syrian Refugees</a>
+              <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/qBuircLH-ZI?start=27" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div class="video-cell">
+              <a href="https://dukeengageserbia.wordpress.com/2016/06/23/self-improvement/" target="_blank" class="btn video-label">Bungee!! Queenstown, NZ</a>
+              <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/YIRznW8E7js" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .video-grid { margin-top: 10px; }
+    .video-row { display: flex; gap: 20px; margin-bottom: 20px; }
+    .video-cell { flex: 1; }
+    .video-label { display: block; margin-bottom: 10px; font-size: 13px; text-align: center; }
+    @media (max-width: 767px) {
+      .video-row { flex-direction: column; }
+    }
+  </style>
+</BaseLayout>

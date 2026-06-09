@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('career');
+---
+<BaseLayout title="Career Reflections | James Wang">
+  <div class="container">
+    <div class="row">
+      <Sidebar />
+      <div class="content">
+        <h1>Career Reflections</h1>
+        {posts.map(post => (
+          <PostCard
+            title={post.data.title}
+            slug={post.id}
+            thumbnail={post.data.thumbnail}
+            category={post.data.category}
+            tags=""
+            date={post.data.date}
+            summary={post.data.summary}
+            basePath="/career-advice"
+          />
+        ))}
+        <a href="/tableauplayground" class="btn">Tableau &rarr;</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

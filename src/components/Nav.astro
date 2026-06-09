@@ -1,0 +1,24 @@
+---
+const currentPath = Astro.url.pathname;
+---
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <img src="/assets/images/5b12ba1a11a9de74f13502b1_logo_W1.png" alt="Logo" width="87" />
+      <span class="site-name">James Chenyang Wang</span>
+    </a>
+    <div class="nav-links">
+      <a href="/" class:list={[{ active: currentPath === '/' }]}>Home</a>
+      <a href="/career-advice" class:list={[{ active: currentPath.startsWith('/career-advice') }]}>Career</a>
+      <a href="/tableauplayground" class:list={[{ active: currentPath === '/tableauplayground' }]}>Tableau</a>
+      <div class="dropdown">
+        <span class="dropdown-toggle nav-links">Videos</span>
+        <div class="dropdown-menu">
+          <a href="/video-list/videos-life">Life</a>
+          <a href="/video-list/videos">Projects</a>
+        </div>
+      </div>
+      <a href="/about" class:list={[{ active: currentPath === '/about' }]}>About</a>
+    </div>
+  </div>
+</nav>

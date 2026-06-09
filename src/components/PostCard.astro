@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  slug: string;
+  thumbnail: string;
+  category: string;
+  tags: string;
+  date: string;
+  summary: string;
+  basePath?: string;
+}
+
+const { title, slug, thumbnail, category, tags, date, summary, basePath = '/posts' } = Astro.props;
+const href = `${basePath}/${slug}`;
+---
+<div class="card post-card">
+  <div class="post-card-inner">
+    <a href={href} class="blog-title-link"><h2 class="blog-title">{title}</h2></a>
+    <div class="post-card-row">
+      <a href={href} class="post-thumb" style={`background-image:url('${thumbnail}')`}></a>
+      <div class="post-meta">
+        <div>
+          <span class="post-info">{category}</span>
+          <span class="post-info">|</span>
+          <span class="post-info">{tags}</span>
+          <span class="post-info">|</span>
+          <span class="post-info">{date}</span>
+        </div>
+        <div>
+          <p class="post-summary">{summary}</p>
+          <a href={href} class="read-more">Read more...</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
