@@ -1,11 +1,12 @@
 ---
+import { site } from '../data/load';
 const currentPath = Astro.url.pathname;
 ---
 <nav class="nav">
   <div class="nav-inner">
     <a href="/" class="nav-brand">
-      <img src="/assets/images/5b12ba1a11a9de74f13502b1_logo_W1.png" alt="Logo" width="87" />
-      <span class="site-name">James Chenyang Wang</span>
+      <img src={site.logo} alt="Logo" width="87" />
+      <span class="site-name">{site.name}</span>
     </a>
     <div class="nav-links">
       <a href="/" class:list={[{ active: currentPath === '/' }]}>Home</a>

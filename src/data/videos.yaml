@@ -1,0 +1,38 @@
+# ── Video pages ──
+# Edit these lists to add/remove/reorder videos. No HTML needed.
+
+life:
+  title: "Videos - Life"
+  videos:
+    - title: "Advice for Duke Students"
+      youtubeId: "_Ul6NJ4_niA"
+    - title: "Drone: Flying over Guilin, China"
+      youtubeId: "8337h_7z_XQ"
+      youtubeParams: "rel=0&controls=1&autoplay=0&mute=0&start=1"
+    - title: "Interviewing Syrian Refugees"
+      youtubeId: "qBuircLH-ZI"
+      youtubeParams: "start=27"
+    - title: "Bungee!! Queenstown, NZ"
+      youtubeId: "YIRznW8E7js"
+      link: "https://dukeengageserbia.wordpress.com/2016/06/23/self-improvement/"
+
+projects:
+  title: "Videos - Projects"
+  videos:
+    - title: "Making Young Voters"
+      youtubeId: "HCgLv3MLQnw"
+      link: "/posts/vote"
+    - title: "When Pornhub Meets Data Science"
+      youtubeId: "PZ8xDPjjtJY"
+      youtubeParams: "rel=0&controls=1&autoplay=0&mute=0&start=1"
+    - title: "Build a Radar Chart in Tableau"
+      youtubeId: "rRsteR6zuhc"
+      link: "/tableauplayground"
+    - title: "How to Predict Personalities?"
+      youtubeId: "AkCe0a6vSMY"
+      youtubeParams: "start=156"
+    - title: "Locating NC Tobacco Retailers"
+      youtubeId: "PxArCjUR2Q4"
+      link: "https://researchblog.duke.edu/2017/08/10/pinpointing-where-durhams-nicotine-addicts-get-their-fix/"
+    - title: "What's the Best City for Jobs?"
+      youtubeId: "FyXB8TXiAlE"

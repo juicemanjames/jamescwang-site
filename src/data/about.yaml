@@ -1,0 +1,39 @@
+# ── About page content ──
+# Edit this file to update the About page without touching HTML.
+
+title: "Where Do I Fall on the Curve?"
+heroBanner: "/assets/images/5ec214ea5013c55f509cdda7_company_logo.png"
+linkedinUrl: "http://www.linkedin.com/in/james-chenyang-wang"
+
+sections:
+  - text: "Dante's Divine Comedy is my favorite epic of all times. I read its 3 cantiche---Inferno, Purgatorio, and Paradiso, front to back, 3 times. It challenges the limit of my imagination and makes me ponder if life has a meaning."
+    image: "/assets/images/5b19d76b151be048696ff0db_UNADJUSTEDNONRAW_thumb_b8cb.jpg"
+    imageAlt: "Hallgrimskirkja, Iceland"
+    caption: "(Hallgrimskirkja, Iceland 2017)"
+
+  - text: "I often debate whether soccer or tennis is my #1 favorite sport. I love embracing my sweaty teammates, and crushing my unwieldily opponents."
+    images:
+      - src: "/assets/images/5b19d76baa90055229e2cae3_l_WTlbMRTM6LpC3wCueZbA_thumb_af48.jpg"
+        alt: "Dante's Death Mask"
+        caption: "(Dante's Death Mask, Florence 2017)"
+      - src: "/assets/images/5b19d76b844733964b1ce9e6_u1vX5eDTSumJBNA1zIZt0Q_thumb_86cb.jpg"
+        alt: "Championship soccer team"
+        caption: "(Championship member: Nanjing Mayor's Cup 2015)"
+        fullWidth: true
+      - src: "/assets/images/5b19d76bec6f20ea8678e724_2j0yA7j0Qo2VByWhXUQ2XA_thumb_a4ed.jpg"
+        alt: "Tennis coach in Serbia"
+        caption: "(With my tennis coach in Serbia, 2016)"
+
+  - text: "I stand up for injustice, a few times. Human migration and refugee crisis is one area I care deeply. Although far from making an impact, it helps me believe the world is becoming a better place, with the angelic friends I made along the road."
+    image: "/assets/images/5b19eba8b242416a2f7d6e3a_IMG_7829.jpg"
+    imageAlt: "Book Drive for Hope Institute"
+    caption: "(Book Drive for Hope Institute for Migrant Children, Nanjing, China, 2013-2014)"
+    imageMaxWidth: "526px"
+    video:
+      youtubeId: "qBuircLH-ZI"
+      caption: "(Aiding Middle Eastern refugees at Info Park, Belgrade, Serbia, Summer 2016)"
+
+  - text: "At the end of the day, I believe in the business world. And I believe in the internet innovations. Reading business cases keeps me up at night, while solving my business problems gets me up in the morning."
+    image: "/assets/images/5b19d76bf61624ba5304677c_6xT4b1uQQXmwdzok7PB0kA_thumb_bae0.jpg"
+    imageAlt: "Business"
+    imageMaxWidth: "522px"

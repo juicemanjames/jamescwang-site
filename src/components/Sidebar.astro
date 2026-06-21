@@ -1,40 +1,39 @@
 ---
 import { getCollection } from 'astro:content';
+import { site } from '../data/load';
+
 const posts = await getCollection('posts');
 const featured = posts.filter(p => p.data.featured).sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
 ---
 <aside class="sidebar">
   <div class="card sidebar-card">
-    <img src="/assets/images/5b12c2b17f519f0815f04743_41409245844_5a038f22d5_o.png" alt="James Wang" class="profile-pic" />
-    <p class="site-description">
-      I'm a data storyteller. I tell stories with R, Python, Tableau, and SQL.
-      <br /><br />
-      I aspire to be a business decision maker. I look forward to failing, and failing fast.
-      <br /><br />
-      Currently I'm working as a data scientist at <strong>Coinbase</strong> in San Francisco. Before then I was at Thumbtack.
-      <br /><br />
-      My "belief of inequalities":<br />
-      Good Data &gt; Fancy Models<br />
-      Storytelling &gt; Data<br />
-      The 80/20 Rule
-      <br /><br />
-      Hit me up!<br />
-      realjameswang@gmail.com
-    </p>
+    <img src={site.profilePic} alt={site.name} class="profile-pic" />
+    <div class="site-description">
+      {site.bio.map(line => (
+        <p set:html={line.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')} />
+      ))}
+      <p>
+        {site.beliefs.title}<br />
+        {site.beliefs.items.map(item => <>{item}<br /></>)}
+      </p>
+      <p>
+        Hit me up!<br />
+        {site.email}
+      </p>
+    </div>
     <div class="grey-rule"></div>
     <div class="social-links">
-      <a href="https://www.facebook.com/chenyangjames.wang" target="_blank">
-        <img src="/assets/images/5b12af517f519f6b67f03c4d_social-03.svg" alt="Facebook" />
-      </a>
-      <a href="https://www.linkedin.com/in/james-c-wang/" target="_blank">
-        <img src="/assets/images/5b12af517f519f85b2f03c5a_social-09.svg" alt="LinkedIn" />
-      </a>
+      {site.socialLinks.map(link => (
+        <a href={link.url} target="_blank">
+          <img src={link.icon} alt={link.label} />
+        </a>
+      ))}
     </div>
     {featured.length > 0 && (
       <>
         <h2 class="small-heading">Featured Posts:</h2>
         {featured.map(post => (
-          <a href={`/posts/${post.slug}`} class="featured-link">{post.data.title}</a>
+          <a href={`/posts/${post.id}`} class="featured-link">{post.data.title}</a>
         ))}
       </>
     )}

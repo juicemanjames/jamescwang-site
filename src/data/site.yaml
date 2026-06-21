@@ -1,0 +1,28 @@
+# ── Site-wide config ──
+# Edit this file to update bio, contact info, and social links across the entire site.
+
+name: "James Chenyang Wang"
+logo: "/assets/images/5b12ba1a11a9de74f13502b1_logo_W1.png"
+profilePic: "/assets/images/5b12c2b17f519f0815f04743_41409245844_5a038f22d5_o.png"
+email: "realjameswang@gmail.com"
+resumePath: "/assets/files/5b132152804c1fbf21d5b9f6_Resume-James-Wang.pdf"
+
+bio:
+  - "I'm a data storyteller. I tell stories with R, Python, Tableau, and SQL."
+  - "I aspire to be a business decision maker. I look forward to failing, and failing fast."
+  - "Currently I'm working as a data scientist at **Coinbase** in San Francisco. Before then I was at Thumbtack."
+
+beliefs:
+  title: 'My "belief of inequalities":'
+  items:
+    - "Good Data > Fancy Models"
+    - "Storytelling > Data"
+    - "The 80/20 Rule"
+
+socialLinks:
+  - label: "Facebook"
+    url: "https://www.facebook.com/chenyangjames.wang"
+    icon: "/assets/images/5b12af517f519f6b67f03c4d_social-03.svg"
+  - label: "LinkedIn"
+    url: "https://www.linkedin.com/in/james-c-wang/"
+    icon: "/assets/images/5b12af517f519f85b2f03c5a_social-09.svg"

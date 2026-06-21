@@ -1,0 +1,44 @@
+---
+import type { Video } from '../data/load';
+
+interface Props {
+  videos: Video[];
+}
+
+const { videos } = Astro.props;
+
+// Pair videos into rows of 2
+const rows: Video[][] = [];
+for (let i = 0; i < videos.length; i += 2) {
+  rows.push(videos.slice(i, i + 2));
+}
+---
+<div class="video-grid">
+  {rows.map(row => (
+    <div class="video-row">
+      {row.map(v => {
+        const src = `https://www.youtube.com/embed/${v.youtubeId}${v.youtubeParams ? '?' + v.youtubeParams : ''}`;
+        return (
+          <div class="video-cell">
+            <a href={v.link || '#'} class="btn video-label" target={v.link?.startsWith('http') ? '_blank' : undefined}>
+              {v.title}
+            </a>
+            <div class="video-embed">
+              <iframe src={src} allowfullscreen title={v.title}></iframe>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  ))}
+</div>
+
+<style>
+  .video-grid { margin-top: 10px; }
+  .video-row { display: flex; gap: 20px; margin-bottom: 20px; }
+  .video-cell { flex: 1; }
+  .video-label { display: block; margin-bottom: 10px; font-size: 13px; text-align: center; }
+  @media (max-width: 767px) {
+    .video-row { flex-direction: column; }
+  }
+</style>
